@@ -55,7 +55,6 @@ Now, you start running the react-scripts by typing in your terminal:
 `
 npm run start
 `
-If you run on your terminal, just scroll up and click on the link of the opened port on your terminal while holding the key CTRL.
 
 ### Contributing
 
