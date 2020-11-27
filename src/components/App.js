@@ -10,11 +10,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="app-panel">
-        <h1>Hello from App</h1>
-        <Display />
-        <ButtonPanel />
-      </div>
+      <>
+        <div className="app-panel">
+          <h1>Hello from App</h1>
+          <Display />
+          <ButtonPanel />
+        </div>
+      </>
     );
   }
 }
