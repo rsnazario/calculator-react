@@ -10,10 +10,10 @@ export default class Button extends React.Component {
   render() {
     const { buttonName } = this.props;
     return (
-      <button>
+      <button type="submit">
         {buttonName}
       </button>
-    )
+    );
   }
 }
 
