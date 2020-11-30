@@ -25,7 +25,11 @@ const calculate = ((calculator, buttonName) => {
       }
       break;
     case '.':
-      
+      if (operation) {
+        next = next ? next + buttonName : '0.';
+      } else {
+        total = total ? total + buttonName : '0.';
+      }
     case '%':
       operation = buttonName;
       total = operate(total, '0', operation);
