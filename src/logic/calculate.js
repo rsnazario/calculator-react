@@ -25,7 +25,7 @@ const calculate = ((calculator, buttonName) => {
       }
       break;
     case '.':
-
+      
     case '%':
       operation = buttonName;
       total = operate(total, '0', operation);
