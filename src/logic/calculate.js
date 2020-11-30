@@ -1,10 +1,9 @@
-import Big from 'big.js';
 import operate from './operate';
 
 const calculate = ((calculator, buttonName) => {
-  const {total, next, operation} = calculator;
+  let { total, next, operation } = calculator;
 
-  switch(buttonName) {
+  switch (buttonName) {
     case 'AC':
       total = null;
       next = null;
@@ -30,6 +29,7 @@ const calculate = ((calculator, buttonName) => {
       } else {
         total = total ? total + buttonName : '0.';
       }
+      break;
     case '%':
       operation = buttonName;
       total = operate(total, '0', operation);

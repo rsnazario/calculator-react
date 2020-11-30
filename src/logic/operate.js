@@ -1,24 +1,23 @@
 import Big from 'big.js';
-import { number } from 'prop-types';
 
 const operate = (numberOne, numberTwo, operation) => {
-  let nOne = Big(numberOne);
-  let nTwo = Big(numberTwo);
+  const nOne = Big(numberOne);
+  const nTwo = Big(numberTwo);
   let result = null;
 
-  switch(operation) {
+  switch (operation) {
     case '-':
       result = nOne.minus(nTwo);
-      break
+      break;
     case '+':
       result = nOne.plus(nTwo);
-      break
+      break;
     case '*':
       result = nOne.mul(nTwo);
-      break
+      break;
     case '/':
-      result = nTwo == 0 ? 'undefined' : nOne.div(nTwo);
-      break
+      result = nTwo === 0 ? 'undefined' : nOne.div(nTwo);
+      break;
     case '%':
       result = nOne.div(100);
       break;
@@ -27,6 +26,6 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   return result.toString();
-}
+};
 
 export default operate;
