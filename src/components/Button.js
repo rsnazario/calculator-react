@@ -4,16 +4,20 @@ import PropTypes from 'prop-types';
 export default class Button extends React.Component {
   constructor(props) {
     super(props);
-    const { buttonName, clicker } = this.props;
-    console.log(buttonName);
-    console.log(clicker);
-    this.handleClick = btnName => clicker(btnName);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const prop = this.props;
+    console.log(prop);
+    console.log('clicked!');
+    prop.clickHandler('5');
   }
 
   render() {
     const { buttonName } = this.props;
     return (
-      <button type="submit" onClick={event => this.handleClick(event.target.value)} value={buttonName}>
+      <button type="submit" onClick={this.handleClick} value={buttonName}>
         {buttonName}
       </button>
     );
@@ -22,7 +26,7 @@ export default class Button extends React.Component {
 
 Button.propTypes = {
   buttonName: PropTypes.string,
-  clicker: PropTypes.func.isRequired,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {

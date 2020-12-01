@@ -6,12 +6,14 @@ export default class ButtonPanel extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    console.log(this.props);
   }
 
   handleClick(buttonName) {
-    const { clicker } = this.props;
-    return clicker(buttonName);
+    const prop = this.props;
+    console.log('buttonPanel:');
+    console.log(this.props);
+    console.log(prop);
+    prop.clickHandler(buttonName);
   }
 
   render() {
@@ -52,5 +54,5 @@ export default class ButtonPanel extends React.Component {
 }
 
 ButtonPanel.propTypes = {
-  clicker: PropTypes.func.isRequired,
+  clickHandler: PropTypes.func.isRequired,
 };
