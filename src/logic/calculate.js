@@ -1,6 +1,7 @@
 import operate from './operate';
 
 const calculate = ((calculator, buttonName) => {
+  console.log('ooi');
   let { total, next, operation } = calculator;
 
   switch (buttonName) {
