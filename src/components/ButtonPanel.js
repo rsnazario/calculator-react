@@ -16,31 +16,31 @@ export default class ButtonPanel extends React.Component {
   render() {
     return (
       <div className="button-panel">
-        <div>
+        <div className="button-row">
           <Button buttonName="AC" clickHandler={this.handleClick} />
           <Button buttonName="+/-" clickHandler={this.handleClick} />
           <Button buttonName="%" clickHandler={this.handleClick} />
           <Button buttonName="/" clickHandler={this.handleClick} />
         </div>
-        <div>
+        <div className="button-row">
           <Button buttonName="7" clickHandler={this.handleClick} />
           <Button buttonName="8" clickHandler={this.handleClick} />
           <Button buttonName="9" clickHandler={this.handleClick} />
           <Button buttonName="*" clickHandler={this.handleClick} />
         </div>
-        <div>
+        <div className="button-row">
           <Button buttonName="4" clickHandler={this.handleClick} />
           <Button buttonName="5" clickHandler={this.handleClick} />
           <Button buttonName="6" clickHandler={this.handleClick} />
           <Button buttonName="-" clickHandler={this.handleClick} />
         </div>
-        <div>
+        <div className="button-row">
           <Button buttonName="1" clickHandler={this.handleClick} />
           <Button buttonName="2" clickHandler={this.handleClick} />
           <Button buttonName="3" clickHandler={this.handleClick} />
           <Button buttonName="+" clickHandler={this.handleClick} />
         </div>
-        <div>
+        <div className="button-row">
           <Button buttonName="0" clickHandler={this.handleClick} />
           <Button buttonName="." clickHandler={this.handleClick} />
           <Button buttonName="=" clickHandler={this.handleClick} />
