@@ -7,17 +7,15 @@ export default class Button extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(target) {
     const prop = this.props;
-    console.log(prop);
-    console.log('clicked!');
-    prop.clickHandler('5');
+    prop.clickHandler(target);
   }
 
   render() {
     const { buttonName } = this.props;
     return (
-      <button type="submit" onClick={this.handleClick} value={buttonName}>
+      <button type="submit" onClick={event => this.handleClick(event.target.value)} value={buttonName}>
         {buttonName}
       </button>
     );

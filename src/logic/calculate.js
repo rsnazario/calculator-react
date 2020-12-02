@@ -14,7 +14,8 @@ const calculate = ((calculator, buttonName) => {
       total = total ? operate(total, -1, '*') : 0;
       next = next ? operate(next, -1, '*') : 0;
       break;
-    case buttonName && ['+', '-', '*', '/'].includes(buttonName):
+    case ['+', '-', '*', '/'].includes(buttonName) && buttonName:
+      console.log('here');
       if (total && next) {
         total = operate(total, next, buttonName);
         next = null;
@@ -36,7 +37,9 @@ const calculate = ((calculator, buttonName) => {
       next = null;
       break;
     case '=':
+      console.log('entered =');
       if (operation && next) {
+        console.log('entered if');
         total = operate(total, next, operation);
         next = null;
         operation = null;
