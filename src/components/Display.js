@@ -9,7 +9,6 @@ export default class Display extends React.Component {
 
   render() {
     const { result } = this.props;
-    console.log(`Display result: ${result}`);
     return (
       <div className="flex-bottom button-row display-style">
         <h1>
