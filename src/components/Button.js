@@ -13,16 +13,21 @@ export default class Button extends React.Component {
   }
 
   render() {
-    const { buttonName } = this.props;
+    const { buttonName, buttonColor, wider } = this.props;
+    const styles = {
+      width: null,
+      backgroundColor: buttonColor,
+    };
+
+    if (wider) {
+      styles.width = '50%';
+    } else {
+      styles.width = '25%';
+    }
     let buttonClass = '';
     buttonClass = buttonName === '0' ? 'button-0' : 'button';
-    if (['+', '-', '*', '/', '='].includes(buttonName)) {
-      buttonClass += ' operator-color';
-    } else {
-      buttonClass += ' classic-color';
-    }
     return (
-      <button className={buttonClass} type="submit" onClick={event => this.handleClick(event.target.value)} value={buttonName}>
+      <button className={buttonClass} type="submit" onClick={event => this.handleClick(event.target.value)} style={styles} value={buttonName}>
         {buttonName}
       </button>
     );
@@ -31,9 +36,13 @@ export default class Button extends React.Component {
 
 Button.propTypes = {
   buttonName: PropTypes.string,
+  buttonColor: PropTypes.string,
+  wider: PropTypes.bool,
   clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
   buttonName: '+',
+  buttonColor: 'orange',
+  wider: false,
 };
