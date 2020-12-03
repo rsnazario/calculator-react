@@ -1,3 +1,4 @@
+/* eslint eqeqeq: 0 */
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
@@ -16,10 +17,10 @@ const operate = (numberOne, numberTwo, operation) => {
       result = nOne.mul(nTwo);
       break;
     case '/':
-      result = nTwo === 0 ? 'undefined' : nOne.div(nTwo);
+      result = nTwo == 0 ? 'undefined' : nOne.div(nTwo);
       break;
     case '%':
-      result = nOne.mod(100);
+      result = nOne.div(100);
       break;
     default:
       result = '';

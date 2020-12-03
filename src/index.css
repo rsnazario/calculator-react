@@ -17,7 +17,15 @@ body {
 }
 
 #root {
-  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  margin: auto;
+}
+
+.app-panel {
+  width: 100%;
 }
 
 code {
@@ -32,18 +40,46 @@ code {
 
 .button-panel {
   text-align: center;
-  height: 500px;
-  width: 500px;
-  border: 2px solid black;
-  border-radius: 5%;
+  margin: 0;
+  padding: 0;
 }
 
-.on-the-right {
-  text-align: right;
+.button-row {
+  height: 100px;
 }
 
-.app-panel {
-  height: 600px;
-  width: 500px;
-  padding: 15px;
+.button {
+  border: 1px solid gray;
+  height: 100%;
+  width: 25%;
+}
+
+.button-0 {
+  border: 1px solid gray;
+  height: 100%;
+  width: 50%;
+}
+
+.flex-bottom {
+  padding: 0 20px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.display-style {
+  border: 1px solid gray;
+  background-color: rgb(145, 145, 145);
+}
+
+.on-bottom {
+  vertical-align: bottom;
+}
+
+.classic-color {
+  background-color: lightgray;
+}
+
+.operator-color {
+  background-color: orange;
 }

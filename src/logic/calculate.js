@@ -2,6 +2,9 @@ import operate from './operate';
 
 const calculate = ((calculator, buttonName) => {
   let { total, next, operation } = calculator;
+  if (total === 'undefined') {
+    total = null;
+  }
 
   switch (buttonName) {
     case 'AC':
@@ -14,7 +17,7 @@ const calculate = ((calculator, buttonName) => {
       total = total ? operate(total, -1, '*') : 0;
       next = next ? operate(next, -1, '*') : 0;
       break;
-    case buttonName && ['+', '-', '*', '/'].includes(buttonName):
+    case ['+', '-', '*', '/'].includes(buttonName) && buttonName:
       if (total && next) {
         total = operate(total, next, buttonName);
         next = null;
@@ -25,8 +28,14 @@ const calculate = ((calculator, buttonName) => {
       break;
     case '.':
       if (operation) {
+        if (next.includes('.')) {
+          break;
+        }
         next = next ? next + buttonName : '0.';
       } else {
+        if (total.includes('.')) {
+          break;
+        }
         total = total ? total + buttonName : '0.';
       }
       break;
