@@ -2,6 +2,9 @@ import operate from './operate';
 
 const calculate = ((calculator, buttonName) => {
   let { total, next, operation } = calculator;
+  if (total === 'undefined') {
+    total = null;
+  }
 
   switch (buttonName) {
     case 'AC':
