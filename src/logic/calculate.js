@@ -25,8 +25,14 @@ const calculate = ((calculator, buttonName) => {
       break;
     case '.':
       if (operation) {
+        if (next.includes('.')) {
+          break;
+        }
         next = next ? next + buttonName : '0.';
       } else {
+        if (total.includes('.')) {
+          break;
+        }
         total = total ? total + buttonName : '0.';
       }
       break;
